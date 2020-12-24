@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>CRUD - Autos</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
+    crossorigin="anonymous" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
+    integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw=="
+    crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <div class="ui container">
+    <div class="title">CRUD de automoviles</div>
+
+    <div class="ui animated fade blue button right floated" tabindex="0" id="formnewbutton">
+      <div class="visible content">Crear nuevo</div>
+      <div class="hidden content">
+        Registro
+      </div>
+    </div>
+
+    <div class="ui modal" id="formnew">
+
+    <form id="form" onsubmit="event.preventDefault(), add()" action="script.php" class="ui form segment">
+      <input type="hidden" id="id">
+      <div class="three fields">
+        <div class="field">
+          <label>Marca</label>
+          <input type="text" id="marca" placeholder="Marca">
+        </div>
+        <div class="field">
+          <label>Modelo</label>
+          <input type="text" id="modelo" placeholder="Modelo">
+        </div>
+        <div class="field">
+          <label>Color</label>
+          <input type="text" id="color" placeholder="Color">
+        </div>
+      </div>
+
+      <div class="three fields">
+        <div class="field">
+          <label>Año</label>
+          <input type="text" id="anio" placeholder="Año">
+        </div>
+        <div class="field">
+          <label>Precio</label>
+          <input type="text" id="precio" placeholder="Precio">
+        </div>
+        <div class="field">
+          <label>Fotografia</label>
+          <input type="text" id="foto" placeholder="Foto">
+        </div>
+      </div>
+      <div class="field">
+        <input type="submit" value="Create" class="ui blue button">
+      </div>
+    </form>
+
+
+  </div>
+
+
+
+  </div>
+
+  <div class="ui container">
+    <table class="ui striped table very basic">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>Color</th>
+          <th>Año</th>
+          <th>Precio</th>
+          <th>Foto</th>
+          <th>Config</th>
+        </tr>
+      </thead>
+      <tbody id="filas"></tbody>
+    </table>
+  </div>
+  <div id="edicion"></div>
+  <script src="script.js"></script>
+</body>
+
+</html>
